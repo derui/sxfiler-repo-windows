@@ -1,3 +1,8 @@
+# opam repository of sxfiler for windows #
+This repository is based on [opam-cross-windows](https://github.com/ocaml-cross/opam-cross-windows), and add some local dependencies to build sxfiler for windows on linux.
+
+Original content is below.
+
 opam-cross-windows
 ==================
 

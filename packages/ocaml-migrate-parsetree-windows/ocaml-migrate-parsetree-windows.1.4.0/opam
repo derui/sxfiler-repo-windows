@@ -11,7 +11,7 @@ dev-repo: "git+https://github.com/ocaml-ppx/ocaml-migrate-parsetree.git"
 doc: "https://ocaml-ppx.github.io/ocaml-migrate-parsetree/"
 tags: [ "syntax" "org:ocamllabs" ]
 build: [
-  ["dune" "build" "-p" name "-j" jobs "-x" "windows"]
+  ["dune" "build" "-p" "ocaml-migrate-parsetree" "-j" jobs "-x" "windows"]
 ]
 depends: [
   "result-windows"

@@ -11,8 +11,8 @@ dev-repo: "git://github.com/ocaml-ppx/ppx_tools_versioned.git"
 tags: [ "syntax" ]
 build: [
   ["dune" "subst" "-x" "windows"] {pinned}
-  ["dune" "build" "-p" name "-j" jobs "-x" "windows"]
-  ["dune" "runtest" "-p" name "-j" jobs "-x" "windows"] {with-test}
+  ["dune" "build" "-p" "ppx_tools_versioned" "-j" jobs "-x" "windows"]
+  ["dune" "runtest" "-p" "ppx_tools_versioned" "-j" jobs "-x" "windows"] {with-test}
 ]
 depends: [
   "ocaml" {>= "4.02.0"}

@@ -21,7 +21,7 @@ depends: [
   "ppx_derivers-windows"
   "ppx_tools-windows"  {>= "4.02.3"}
   "result-windows"
-  "ounit-windows"      {with-test}
+  "ounit"      {with-test}
   "ocaml" {>= "4.02" & < "4.10.0"}
   "ocaml-windows"
 ]

@@ -9,9 +9,9 @@ dev-repo: "git+https://github.com/ocaml-ppx/ppx_deriving.git"
 tags: [ "syntax" ]
 build: [
   ["dune" "subst"] {pinned}
-  ["dune" "build" "-p" name "-j" jobs "-x" "windows"]
-  ["dune" "runtest" "-p" name "-j" jobs "-x" "windows"] {with-test & ocaml:version >= "4.03"}
-  ["dune" "build" "@doc" "-p" name "-j" jobs "-x" "windows"] {with-doc}
+  ["dune" "build" "-p" "ppx_deriving" "-j" jobs "-x" "windows"]
+  ["dune" "runtest" "-p" "ppx_deriving" "-j" jobs "-x" "windows"] {with-test & ocaml:version >= "4.03"}
+  ["dune" "build" "@doc" "-p" "ppx_deriving" "-j" jobs "-x" "windows"] {with-doc}
 ]
 depends: [
   "dune"     {>= "1.6.3"}

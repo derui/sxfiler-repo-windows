@@ -26,7 +26,7 @@ depends: [
 ]
 
 build: [
-  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "build" "-p" "lwt_ppx" "-j" jobs]
 ]
 
 url {

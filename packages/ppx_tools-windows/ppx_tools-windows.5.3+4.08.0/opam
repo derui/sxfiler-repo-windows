@@ -7,6 +7,9 @@ homepage: "https://github.com/ocaml-ppx/ppx_tools"
 bug-reports: "https://github.com/ocaml-ppx/ppx_tools/issues"
 dev-repo: "git://github.com/ocaml-ppx/ppx_tools.git"
 tags: [ "syntax" ]
+patches: [
+  "patches/use-ocamlfind.patch"
+]
 build: [["env" "OCAMLFIND_TOOLCHAIN=windows" make "all"]]
 install: [["env" "OCAMLFIND_TOOLCHAIN=windows" make "install"]]
 depends: [

@@ -10,7 +10,10 @@ tags: [ "syntax" ]
 patches: [
   "patches/use-ocamlfind.patch"
 ]
-build: [["env" "OCAMLFIND_TOOLCHAIN=windows" make "all"]]
+build: [
+  [make "ast_lifter.ml" "dumpast" "ppx_metaquot" "rewriter"]
+  ["env" "OCAMLFIND_TOOLCHAIN=windows" make "all" "EXE="]
+]
 install: [["env" "OCAMLFIND_TOOLCHAIN=windows" make "install"]]
 depends: [
   "ocaml" {>= "4.08.0"}

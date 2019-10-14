@@ -7,6 +7,9 @@ doc: "https://ocaml-ppx.github.io/ppx_deriving/"
 bug-reports: "https://github.com/ocaml-ppx/ppx_deriving/issues"
 dev-repo: "git+https://github.com/ocaml-ppx/ppx_deriving.git"
 tags: [ "syntax" ]
+patches: [
+  "patches/remove-execute.patch"
+]
 build: [
   ["dune" "subst"] {pinned}
   ["dune" "build" "-p" "ppx_deriving" "-j" jobs "-x" "windows"]

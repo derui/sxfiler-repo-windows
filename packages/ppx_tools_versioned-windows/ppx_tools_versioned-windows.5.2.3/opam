@@ -15,8 +15,7 @@ build: [
   ["dune" "runtest" "-p" "ppx_tools_versioned" "-j" jobs "-x" "windows"] {with-test}
 ]
 depends: [
-  "ocaml" {>= "4.02.0"}
-  "ocaml-windows"
+  "ocaml-windows" {>= "4.02.0"}
   "dune" {>= "1.0"}
   "ocaml-migrate-parsetree-windows" {>= "1.4.0"}
 ]

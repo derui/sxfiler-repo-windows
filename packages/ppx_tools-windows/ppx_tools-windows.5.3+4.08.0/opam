@@ -14,7 +14,7 @@ build: [
   [make "ast_lifter.ml" "dumpast" "ppx_metaquot" "rewriter"]
   ["env" "OCAMLFIND_TOOLCHAIN=windows" make "all" "EXE="]
 ]
-install: [["env" "OCAMLFIND_TOOLCHAIN=windows" make "install"]]
+install: [["env" "OCAMLFIND_TOOLCHAIN=windows" make "install" "EXE="]]
 depends: [
   "ocaml" {>= "4.08.0"}
   "ocamlfind" {build & >= "1.5.0"}

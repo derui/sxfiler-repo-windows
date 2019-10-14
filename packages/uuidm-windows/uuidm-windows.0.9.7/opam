@@ -14,6 +14,7 @@ depends: [
   "ocamlbuild" {build}
   "topkg" {build}
   "opam-installer" {build}
+  "cmdliner-windows" {build}
 ]
 depopts: [ "cmdliner" ]
 build: [[  "ocaml" "pkg/pkg.ml" "build"

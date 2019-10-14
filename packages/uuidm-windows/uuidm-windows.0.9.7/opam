@@ -8,15 +8,18 @@ bug-reports: "https://github.com/dbuenzli/uuidm/issues"
 tags: [ "uuid" "codec" "org:erratique" ]
 license: "ISC"
 depends: [
+  "ocaml" {>= "4.03.0"}
   "ocaml-windows" {>= "4.03.0"}
   "ocamlfind" {build}
   "ocamlbuild" {build}
-  "topkg" {build} ]
+  "topkg" {build}
+  "opam-installer" {build}
+]
 depopts: [ "cmdliner" ]
-build:
-[  "env" "OCAMLFIND_TOOLCHAIN=windows" "ocaml" "pkg/pkg.ml" "build"
+build: [[  "ocaml" "pkg/pkg.ml" "build"
            "--pinned" "%{pinned}%"
-           "--with-cmdliner" "%{cmdliner:installed}%" ]
+           "--with-cmdliner" "%{cmdliner:installed}%" "--toolchain" "windows" ]]
+install: [[  "opam-installer" "--prefix=%{prefix}%/windows-sysroot" "uuidm.install" ]]
 synopsis: """Universally unique identifiers (UUIDs) for OCaml"""
 description: """\
 

@@ -1,0 +1,64 @@
+opam-version: "2.0"
+maintainer: "anil@recoil.org"
+authors: [
+  "Anil Madhavapeddy"
+  "Stefano Zacchiroli"
+  "David Sheets"
+  "Thomas Gazagnaire"
+  "David Scott"
+  "Rudi Grinberg"
+  "Andy Ray"
+]
+synopsis: "An OCaml library for HTTP clients and servers"
+description: """
+Cohttp is an OCaml library for creating HTTP daemons. It has a portable
+HTTP parser, and implementations using various asynchronous programming
+libraries.
+
+See the cohttp-async, cohttp-lwt, cohttp-lwt-unix, cohttp-lwt-jsoo and
+cohttp-mirage libraries for concrete implementations for particular
+targets.
+
+You can implement other targets using the parser very easily. Look at the `IO`
+signature in `lib/s.mli` and implement that in the desired backend.
+
+You can activate some runtime debugging by setting `COHTTP_DEBUG` to any
+value, and all requests and responses will be written to stderr.  Further
+debugging of the connection layer can be obtained by setting `CONDUIT_DEBUG`
+to any value."""
+license: "ISC"
+tags: ["org:mirage" "org:xapi-project"]
+homepage: "https://github.com/mirage/ocaml-cohttp"
+doc: "https://mirage.github.io/ocaml-cohttp/"
+bug-reports: "https://github.com/mirage/ocaml-cohttp/issues"
+depends: [
+  "ocaml" {>= "4.04.1"}
+  "ocaml-windows"
+  "dune-windows" {>= "1.1.0"}
+  "re-windows" {>= "1.9.0"}
+  "uri-windows" {>= "2.0.0"}
+  "uri-sexp-windows"
+  "fieldslib-windows"
+  "sexplib0-windows"
+  "ppx_fields_conv-windows" {>= "v0.9.0"}
+  "ppx_sexp_conv-windows" {>= "v0.9.0"}
+  "stringext-windows"
+  "base64-windows" {>= "3.1.0"}
+  "fmt" {with-test}
+  "jsonm-windows" {build}
+  "alcotest" {with-test}
+]
+build: [
+  ["dune" "subst" "-x" "windows"] {pinned}
+  ["dune" "build" "-p" "cohttp" "-j" jobs "-x" "windows"]
+  ["dune" "runtest" "-p" "cohttp" "-j" jobs "-x" "windows"] {with-test}
+]
+dev-repo: "git+https://github.com/mirage/ocaml-cohttp.git"
+url {
+  src:
+    "https://github.com/mirage/ocaml-cohttp/releases/download/v2.2.0/cohttp-v2.2.0.tbz"
+  checksum: [
+    "sha256=7b504359cfaa8d02ffdf1e2d03100ea9d1d552defeb3679e99960196ac2cea29"
+    "sha512=d49a43856817ffcda1b1f242e1f6fb3fe23139186f2b6ffc8927810b9c8bf874cd7c1807904f76184a2fb5116e588e689032eafd2e1e33b83e7c31704e42941d"
+  ]
+}

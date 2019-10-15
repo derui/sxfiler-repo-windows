@@ -8,8 +8,8 @@ bug-reports: "https://github.com/derui/migemocaml"
 dev-repo: "git+https://github.com/derui/migemocaml"
 tags: []
 build: [
-  ["dune" "build" "-p" name "-j" jobs]
-  ["dune" "runtest" "-p" name] {with-test}
+  ["dune" "build" "-p" "migemocaml" "-j" jobs "-x" "windows"]
+  ["dune" "runtest" "-p" "migemocaml" "-x" "windows"] {with-test}
 ]
 depends: [
   "dune" {build & >= "1.0.0"}

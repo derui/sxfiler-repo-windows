@@ -24,7 +24,7 @@ depends: [
   "alcotest" {with-test}
 ]
 build: [
-  ["dune" "subst" "-x" "windows"]
+  ["dune" "subst"]
   ["dune" "build" "-p" "base64" "-j" jobs "-x" "windows"]
   ["dune" "runtest" "-p" "base64" "-x" "windows"] {with-test}
 ]

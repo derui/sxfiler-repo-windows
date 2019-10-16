@@ -22,6 +22,7 @@ depends: [
   "ocaml" {>= "4.02.0"}
   "ocaml-windows"
   "ocaml-migrate-parsetree-windows" {>= "1.4.0"}
+  "ppx_tools_versioned" {>= "5.2.3"}
   "ppx_tools_versioned-windows" {>= "5.2.3"}
 ]
 

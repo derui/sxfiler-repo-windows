@@ -10,6 +10,7 @@ depends: [
   "ocaml-windows"
   "dune-windows"
   "fmt-windows"
+  "astring"
   "astring-windows"
   "alcotest" {with-test}
 ]

@@ -40,8 +40,8 @@ depends: [
   "uri-sexp-windows"
   "fieldslib-windows"
   "sexplib0-windows"
-  "ppx_fields_conv-windows" {>= "v0.9.0"}
-  "ppx_sexp_conv-windows" {>= "v0.9.0"}
+  "ppx_fields_conv" {>= "v0.9.0"}
+  "ppx_sexp_conv" {>= "v0.9.0"}
   "stringext-windows"
   "base64-windows" {>= "3.1.0"}
   "fmt" {with-test}

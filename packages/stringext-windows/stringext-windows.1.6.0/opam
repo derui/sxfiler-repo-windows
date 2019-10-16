@@ -10,7 +10,7 @@ depends: [
   "dune-windows" {>= "1.0"}
   "ounit" {with-test}
   "qtest" {with-test & >= "2.2"}
-  "base-bytes-windows"
+  "base-bytes"
 ]
 build: [
   ["dune" "subst" "-x" "windows"] {pinned}

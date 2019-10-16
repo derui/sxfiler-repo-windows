@@ -22,8 +22,8 @@ depends: [
 ]
 build: [
   ["dune" "subst" "-x" "windows"] {pinned}
-  ["dune" "build" "-p" "ipaddr-windows" "-j" jobs "-x" "windows"]
-  ["dune" "runtest" "-p" "ipaddr-windows" "-j" jobs "-x" "windows"] {with-test}
+  ["dune" "build" "-p" "ipaddr-sexp" "-j" jobs "-x" "windows"]
+  ["dune" "runtest" "-p" "ipaddr-sexp" "-j" jobs "-x" "windows"] {with-test}
 ]
 dev-repo: "git+https://github.com/mirage/ocaml-ipaddr.git"
 url {

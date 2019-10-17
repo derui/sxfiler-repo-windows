@@ -1,0 +1,35 @@
+diff --git a/src/Makefile b/src/Makefile
+index 04d3ff25..ed7e39dc 100644
+--- a/src/Makefile
++++ b/src/Makefile
+@@ -13,7 +13,7 @@ endif
+ # ----------------------------------------------------------------------------
+ # Ocamlbuild tool and settings.
+ 
+-OCAMLBUILD := ocamlbuild -classic-display -j 0
++OCAMLBUILD := ocamlbuild -use-ocamlfind -classic-display -j 0
+ ifeq ($(TARGET),byte)
+   OCAMLBUILD := $(OCAMLBUILD) -byte-plugin
+ endif
+@@ -90,7 +90,9 @@ FLAGS := \
+ 
+ .PHONY: stage2
+ stage2:
+-	@ $(OCAMLBUILD) -build-dir _stage2 -tag fancy_parser \
++	@ $(OCAMLBUILD) -build-dir _stage2 -just-plugin
++	@ OCAMLFIND_TOOLCHAIN=$(OCAMLFIND_CROSS_TOOLCHAIN) \
++	    $(OCAMLBUILD) -build-dir _stage2 -tag fancy_parser \
+ 	    -use-menhir -menhir "$(SRC)/_stage1/menhir.$(TARGET) $(FLAGS)" \
+ 	    $(MENHIRLIBCMXS) menhir.$(TARGET)
+ 
+@@ -125,7 +127,9 @@ endif
+ 
+ .PHONY: sdk
+ sdk:
+-	@ $(OCAMLBUILD) \
++	@ $(OCAMLBUILD) -build-dir _sdk -just-plugin
++	@ OCAMLFIND_TOOLCHAIN=$(OCAMLFIND_CROSS_TOOLCHAIN) \
++	    $(OCAMLBUILD) \
+ 	    -build-dir _sdk \
+ 	    -tag sdk \
+ 	    $(MENHIRSDK)

@@ -12,8 +12,8 @@ build: [
   ["dune" "runtest" "-p" "migemocaml" "-x" "windows"] {with-test}
 ]
 depends: [
-  "dune" {build & >= "1.0.0"}
-  "menhir" {build}
+  "dune-windows" {build & >= "1.0.0"}
+  "menhir-windows" {build}
   "oUnit" {with-test}
 ]
 available: ["ocaml" >= "4.05.0"]

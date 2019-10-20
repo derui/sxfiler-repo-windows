@@ -38,7 +38,7 @@ available: arch = "x86_64"
 synopsis: "OCaml cross-compiler for 64-bit x86 Windows targets"
 extra-files: [
   ["windows.conf.in" "md5=8457fb3000403fb7145f20e8a0095f89"]
-  ["build.sh" "md5=077301bbbcb80c4bde80bd824d3ca01e"]
+  ["build.sh" "md5=b33b9d4e1d5801fb72b34c6419190901"]
   ["remove.sh" "md5=d2ebe7ce54e4a93a4d71d5fd889f17e3"]
   ["install.sh" "md5=995050a54b009b4ded377a221f4f6639"]
   ["Makefile.cross.in" "md5=239f0730dc9614f270d240bc942bea3a"]

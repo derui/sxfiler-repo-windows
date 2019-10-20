@@ -18,8 +18,8 @@ depends: [
   "dune-windows" {>= "1.1.1"}
   "websocket-windows" {= version}
   "lwt_log-windows" {>= "1.1.0"}
-  "cohttp-lwt-unix-windows" {>= "1.0.2" & < "2.3.0"}
-  "conduit-lwt-unix-windows" {<"2.0.0"}
+  "cohttp-lwt-unix-windows" {>= "1.0.2"}
+  "conduit-lwt-unix-windows"
 ]
 synopsis: "Websocket library (Lwt)"
 description: """
@@ -40,3 +40,6 @@ url {
     "https://github.com/vbmithr/ocaml-websocket/releases/download/2.13/websocket-2.13.tbz"
   checksum: "md5=d0d07611c69250602c0ad9d7cddfae8e"
 }
+extra-files: [
+  ["patches/support-conduit-2.0.0.patch" "md5=1f1840f5a02aefae642eeb18f5c21b81"]
+]

@@ -35,7 +35,6 @@ depends: [
   "fmt-windows" {>= "0.8.2"}
   "cohttp-lwt-windows" {=version}
   "lwt-windows" {>= "3.0.0"}
-  "base-unix"
   "ounit" {with-test}
 ]
 build: [

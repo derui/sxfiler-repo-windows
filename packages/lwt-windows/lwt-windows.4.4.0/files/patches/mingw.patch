@@ -1,18 +1,31 @@
+diff --git a/src/unix/lwt_unix_stubs.c b/src/unix/lwt_unix_stubs.c
+index 9786b594..2347c25d 100644
+--- a/src/unix/lwt_unix_stubs.c
++++ b/src/unix/lwt_unix_stubs.c
+@@ -765,6 +765,7 @@ CAMLprim value lwt_unix_set_signal(value val_signum, value val_notification) {
+   int signum = caml_convert_signal_number(Int_val(val_signum));
+   intnat notification = Long_val(val_notification);
+ 
++  printf("signal %d", signum);
+   if (signum < 0 || signum >= NSIG)
+     caml_invalid_argument("Lwt_unix.on_signal: unavailable signal");
+ 
 diff --git a/src/unix/unix_c/unix_iov_max.c b/src/unix/unix_c/unix_iov_max.c
-index 27ee4529..c8c19abb 100644
+index 27ee4529..0955fc1a 100644
 --- a/src/unix/unix_c/unix_iov_max.c
 +++ b/src/unix/unix_c/unix_iov_max.c
-@@ -5,9 +5,7 @@
-
+@@ -5,12 +5,10 @@
+ 
  #include "lwt_config.h"
-
+ 
 -#if !defined(LWT_ON_WINDOWS)
 -
  #define _GNU_SOURCE
-
++#define IOV_MAX 65536
+ 
  #include <caml/mlvalues.h>
  #include <limits.h>
-
+ 
  CAMLprim value lwt_unix_iov_max(value unit) { return Val_int(IOV_MAX); }
 -#endif
 diff --git a/src/unix/windows_c/windows_not_available.c b/src/unix/windows_c/windows_not_available.c

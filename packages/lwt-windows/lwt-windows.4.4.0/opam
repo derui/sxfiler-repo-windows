@@ -16,7 +16,9 @@ maintainer: [
   "Anton Bachin <antonbachin@yahoo.com>"
 ]
 dev-repo: "git+https://github.com/ocsigen/lwt.git"
-
+patches: [
+  "patches/lwt-not-on-windows.patch"
+]
 depends: [
   "cppo" {build & >= "1.1.0"}
   "dune" {>= "1.7.0"}
@@ -52,7 +54,7 @@ resolved by Lwt in parallel.
 Meanwhile, OCaml code, including code creating and waiting on promises, runs in
 a single thread by default. This reduces the need for locks or other
 synchronization primitives. Code can be run in parallel on an opt-in basis."
-
+extra-files: ["patches/lwt-not-on-windows.patch" "md5=c87e76fbfa64bdcc67dec9fa66116343"]
 url {
   src: "https://github.com/ocsigen/lwt/archive/4.4.0.tar.gz"
   checksum: "md5=8bfc70c2944020fa08dd04877747f5f9"

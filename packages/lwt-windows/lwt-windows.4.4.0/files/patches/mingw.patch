@@ -1,0 +1,29 @@
+diff --git a/src/unix/unix_c/unix_iov_max.c b/src/unix/unix_c/unix_iov_max.c
+index 27ee4529..c8c19abb 100644
+--- a/src/unix/unix_c/unix_iov_max.c
++++ b/src/unix/unix_c/unix_iov_max.c
+@@ -5,9 +5,7 @@
+
+ #include "lwt_config.h"
+
+-#if !defined(LWT_ON_WINDOWS)
+-
+ #define _GNU_SOURCE
+
+ #include <caml/mlvalues.h>
+ #include <limits.h>
+
+ CAMLprim value lwt_unix_iov_max(value unit) { return Val_int(IOV_MAX); }
+-#endif
+diff --git a/src/unix/windows_c/windows_not_available.c b/src/unix/windows_c/windows_not_available.c
+index d23af97f..a6716a01 100644
+--- a/src/unix/windows_c/windows_not_available.c
++++ b/src/unix/windows_c/windows_not_available.c
+@@ -13,7 +13,6 @@ LWT_NOT_AVAILABLE1(unix_readable)
+ LWT_NOT_AVAILABLE1(unix_writable)
+ LWT_NOT_AVAILABLE6(unix_madvise)
+ LWT_NOT_AVAILABLE4(unix_mincore)
+-LWT_NOT_AVAILABLE1(unix_iov_max)
+ LWT_NOT_AVAILABLE3(unix_writev)
+ LWT_NOT_AVAILABLE3(unix_writev_job)
+ LWT_NOT_AVAILABLE3(unix_readv)

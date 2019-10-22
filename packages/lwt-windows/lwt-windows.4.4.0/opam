@@ -22,7 +22,8 @@ patches: [
 depends: [
   "cppo" {build & >= "1.1.0"}
   "dune" {>= "1.7.0"}
-  "dune-configurator"
+  "dune-windows" {>= "1.7.0"}
+  "dune-configurator-windows"
   "mmap-windows" {>= "1.1.0"} # mmap is needed as long as Lwt supports OCaml < 4.06.0.
   "ocaml-windows" {>= "4.02.0"}
   "ocplib-endian-windows"

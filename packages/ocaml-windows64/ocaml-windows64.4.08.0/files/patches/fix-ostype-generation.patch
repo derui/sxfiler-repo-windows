@@ -1,0 +1,61 @@
+diff --git a/asmcomp/closure.ml b/asmcomp/closure.ml
+index 35239faff..dea8ee87a 100644
+--- a/asmcomp/closure.ml
++++ b/asmcomp/closure.ml
+@@ -500,9 +500,9 @@ let simplif_prim_pure fpc p (args, approxs) dbg =
+         | Word_size -> make_const_int (8*Arch.size_int)
+         | Int_size -> make_const_int (8*Arch.size_int - 1)
+         | Max_wosize -> make_const_int ((1 lsl ((8*Arch.size_int) - 10)) - 1 )
+-        | Ostype_unix -> make_const_bool (Sys.os_type = "Unix")
+-        | Ostype_win32 -> make_const_bool (Sys.os_type = "Win32")
+-        | Ostype_cygwin -> make_const_bool (Sys.os_type = "Cygwin")
++        | Ostype_unix -> make_const_bool false
++        | Ostype_win32 -> make_const_bool true
++        | Ostype_cygwin -> make_const_bool false
+         | Backend_type ->
+             make_const_ptr 0 (* tag 0 is the same as Native here *)
+       end
+diff --git a/asmcomp/cmmgen.ml b/asmcomp/cmmgen.ml
+index d0490998c..72a5a139e 100644
+--- a/asmcomp/cmmgen.ml
++++ b/asmcomp/cmmgen.ml
+@@ -2114,9 +2114,9 @@ and transl_prim_1 env p arg dbg =
+         | Word_size -> int_const (8*Arch.size_int)
+         | Int_size -> int_const (8*Arch.size_int - 1)
+         | Max_wosize -> int_const ((1 lsl ((8*Arch.size_int) - 10)) - 1)
+-        | Ostype_unix -> const_of_bool (Sys.os_type = "Unix")
+-        | Ostype_win32 -> const_of_bool (Sys.os_type = "Win32")
+-        | Ostype_cygwin -> const_of_bool (Sys.os_type = "Cygwin")
++        | Ostype_unix -> const_of_bool false
++        | Ostype_win32 -> const_of_bool true
++        | Ostype_cygwin -> const_of_bool false
+         | Backend_type -> int_const 0 (* tag 0 is the same as Native here *)
+       end
+   | Poffsetint n ->
+diff --git a/stdlib/sys.mlp b/stdlib/sys.mlp
+index 5d997e8ad..61a7ebe44 100644
+--- a/stdlib/sys.mlp
++++ b/stdlib/sys.mlp
+@@ -30,9 +30,6 @@ external big_endian : unit -> bool = "%big_endian"
+ external word_size : unit -> int = "%word_size"
+ external int_size : unit -> int = "%int_size"
+ external max_wosize : unit -> int = "%max_wosize"
+-external unix : unit -> bool = "%ostype_unix"
+-external win32 : unit -> bool = "%ostype_win32"
+-external cygwin : unit -> bool = "%ostype_cygwin"
+ external get_backend_type : unit -> backend_type = "%backend_type"
+ 
+ let (executable_name, argv) = get_argv()
+@@ -41,9 +38,9 @@ let backend_type = get_backend_type ()
+ let big_endian = big_endian ()
+ let word_size = word_size ()
+ let int_size = int_size ()
+-let unix = unix ()
+-let win32 = win32 ()
+-let cygwin = cygwin ()
++let unix = false
++let win32 = true
++let cygwin = false
+ let max_array_length = max_wosize ()
+ let max_floatarray_length = max_array_length / (64 / word_size)
+ let max_string_length = word_size / 8 * max_array_length - 1

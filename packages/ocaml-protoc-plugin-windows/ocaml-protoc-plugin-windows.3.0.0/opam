@@ -13,13 +13,16 @@ build: [
 depends: [
   "conf-protoc-windows" {>= "1.0.0"}
   "dune" {>= "1.10"}
+  "ocaml" {>= "4.05.0"}
   "ocaml-windows"
   "ppx_expect" {with-test}
   "ppx_inline_test" {with-test}
   "ppx_deriving" {with-test}
 ]
 
-
+patches: [
+  "patches/remove-google_types.patch"
+]
 synopsis: "Plugin for protoc protobuf compiler to generate ocaml definitions from a .proto file"
 
 description: """ The plugin generates ocaml type definitions,
@@ -33,6 +36,7 @@ The types generated aims to create ocaml idiomatic types;
 - all floating point types are mapped to float.
 - packages are mapped to nested modules
 """
+extra-files: ["patches/remove-google_types.patch" "md5=954c5c1595b8dd08b334de27bc611ff2  "]
 url {
   src: "https://github.com/issuu/ocaml-protoc-plugin/archive/3.0.0.tar.gz"
   checksum: [

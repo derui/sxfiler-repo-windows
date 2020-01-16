@@ -48,7 +48,7 @@ depends: [
   "base64-windows" {>= "3.1.0"}
   "stdlib-shims-windows"
   "fmt" {with-test}
-  "jsonm-windows" {build}
+  "jsonm-windows"
   "alcotest" {with-test}
 ]
 build: [

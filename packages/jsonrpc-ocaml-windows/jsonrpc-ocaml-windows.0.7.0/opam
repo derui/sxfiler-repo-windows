@@ -1,0 +1,28 @@
+
+opam-version: "2.0"
+version: "0.7.0"
+maintainer: "derutakayu@gmail.com"
+authors: "derui"
+license: "MIT"
+synopsis: "Minimal JSON-RPC implementation for OCaml"
+homepage: "https://github.com/derui/jsonrpc-ocaml"
+bug-reports: "https://github.com/derui/jsonrpc-ocaml/issues"
+dev-repo: "git+https://github.com/derui/jsonrpc-ocaml"
+tags: []
+build: [
+  ["dune" "build" "-p" "jsonrpc-ocaml" "-j" jobs "-x" "windows"]
+  ["dune" "runtest" "-p" "jsonrpc-ocaml" "-x" "windows"] {with-test}
+]
+depends: [
+  "dune" {build & >= "1.0.0"}
+  "yojson-windows" { >= "1.6.0" }
+  "lwt-windows" { >= "4.0.0"}
+  "alcotest" { with-test & >= "0.8.4" }
+  "alcotest-lwt" { with-test & >= "0.8.0" }
+  "cohttp-lwt-unix" { with-test & >= "2.0.0" }
+]
+available: ["ocaml" >= "4.05.0"]
+url {
+  src: "https://github.com/derui/jsonrpc-ocaml/archive/0.7.0.tar.gz"
+  checksum: "md5=80cc1e02272b910e1b52af7c378b7142"
+}

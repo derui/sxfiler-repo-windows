@@ -18,7 +18,7 @@ depends: [
   "ppx_inline_test-windows" {< "v0.13"}
   "ppx_sexp_conv" {with-test & < "v0.13"}
   "sexplib" {with-test & < "v0.13"}
-  "alcotest" {with-test & >= "0.8.0"}
+  "alcotest-windows" {with-test & < "1.0.0"}
 ]
 synopsis: "Json driver for Ppx_protocol_conv"
 description: """

@@ -49,7 +49,7 @@ depends: [
   "stdlib-shims-windows"
   "fmt" {with-test}
   "jsonm" {build}
-  "alcotest" {with-test}
+  "alcotest" {with-test & < "1.0.0"}
 ]
 build: [
   ["dune" "subst"] {pinned}

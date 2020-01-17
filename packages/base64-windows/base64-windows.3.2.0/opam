@@ -21,7 +21,7 @@ depends: [
   "dune-windows" {>= "1.0.1"}
   "bos" {with-test}
   "rresult" {with-test}
-  "alcotest" {with-test}
+  "alcotest-windows" {with-test & < "1.0.0"}
 ]
 build: [
   ["dune" "subst"]

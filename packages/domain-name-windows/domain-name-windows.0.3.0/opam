@@ -12,7 +12,7 @@ depends: [
   "fmt-windows"
   "astring"
   "astring-windows"
-  "alcotest" {with-test}
+  "alcotest-windows" {with-test & < "1.0.0"}
 ]
 build: [
   ["dune" "subst" "-x" "windows"] {pinned}

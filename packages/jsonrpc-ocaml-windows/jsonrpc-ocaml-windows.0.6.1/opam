@@ -17,8 +17,8 @@ depends: [
   "dune" {build & >= "1.0.0"}
   "yojson-windows" { >= "1.6.0" }
   "lwt-windows" { >= "4.0.0"}
-  "alcotest" { with-test & >= "0.8.4" }
-  "alcotest-lwt" { with-test & >= "0.8.0" }
+  "alcotest-windows" { with-test & < "1.0.0" }
+  "alcotest-lwt-windows" { with-test & < "1.0.0" }
   "cohttp-lwt-unix" { with-test & >= "2.0.0" }
 ]
 available: ["ocaml" >= "4.05.0"]

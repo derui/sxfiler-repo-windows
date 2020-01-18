@@ -11,6 +11,7 @@ build: [
 ]
 depends: [
   "ocaml-windows" {>= "4.04.0"}
+  "ppx_protocol_conv" {= "5.0.0"}
   "ppx_protocol_conv-windows" {= "5.0.0"}
   "yojson-windows" {>= "1.5.0" & < "2.0.0"}
   "dune" {>= "1.2"}

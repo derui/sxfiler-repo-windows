@@ -1,0 +1,14 @@
+diff --git a/src/dune b/src/dune
+index 9e18049..48c588d 100644
+--- a/src/dune
++++ b/src/dune
+@@ -1,7 +1,7 @@
+ (library (name ppx_expect) (public_name ppx_expect) (kind ppx_rewriter)
+  (ppx_runtime_libraries ppx_expect.collector)
+  (libraries base expect_test_common ppx_expect_payload ppxlib ppx_inline_test
+-  ppx_inline_test.libname ppx_here.expander ppxlib.metaquot_lifters)
++  ppx_inline_test.libname ppx_here.expander ppxlib.metaquot_lifters stdlib-shims)
+  (flags :standard -w -17) (preprocess (pps ppxlib.metaquot ppxlib.traverse))
+  (inline_tests.backend (runner_libraries ppx_expect.evaluator)
+   (extends ppx_inline_test)))
+\ No newline at end of file

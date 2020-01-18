@@ -1,3 +1,16 @@
+diff --git a/collector/expect_test_collector.ml b/collector/expect_test_collector.ml
+index 14c4d67..4575019 100644
+--- a/collector/expect_test_collector.ml
++++ b/collector/expect_test_collector.ml
+@@ -58,7 +58,7 @@ module Make(C : Expect_test_config.S) = struct
+       Format.pp_print_flush Format.std_formatter ();
+       Format.pp_print_flush Format.err_formatter ();
+       Caml.flush Caml.stdout;
+-      Caml.flush Pervasives.stderr;
++      Caml.flush Stdlib.stderr;
+       C.flush ()
+   end
+ 
 diff --git a/src/dune b/src/dune
 index 9e18049..48c588d 100644
 --- a/src/dune

@@ -42,5 +42,5 @@ url {
 }
 
 extra-files: [
-  ["patches/stdlib-shims.patch" "md5=ebb364ef424cc513c8f3d51a15e732fb"]
+  ["patches/stdlib-shims.patch" "md5=fdfd73b96b7ab517493fd5d162f6efaa"]
 ]

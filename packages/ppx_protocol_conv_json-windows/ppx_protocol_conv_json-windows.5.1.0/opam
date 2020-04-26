@@ -9,7 +9,8 @@ build: [
   ["dune" "build" "-p" "ppx_protocol_conv_json" "-j" jobs "-x" "windows"]
 ]
 depends: [
-  "ocaml-windows" {>= "4.04.0"}
+  "ocaml" {>= "4.04.0"}
+  "ocaml-windows"
   "ppx_protocol_conv-windows" {= version}
   "yojson-windows" {>= "1.5.0" & < "2.0.0"}
   "dune" {>= "1.2"}

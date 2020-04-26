@@ -9,7 +9,8 @@ build: [
   ["dune" "build" "-p" "ppx_protocol_conv" "-j" jobs "-x" "windows"]
 ]
 depends: [
-  "ocaml-windows" {>= "4.04"}
+  "ocaml" {>= "4.04"}
+  "ocaml-windows"
   "base-windows"
   "dune" {>= "1.2"}
   "ppxlib-windows" {>= "0.9.0"}

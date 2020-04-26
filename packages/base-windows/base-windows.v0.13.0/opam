@@ -10,10 +10,10 @@ build: [
   ["dune" "build" "-p" "base" "-j" jobs "-x" "windows"]
 ]
 depends: [
-  "ocaml-windows"    {>= "4.04.2" & < "4.10.0"}
+  "ocaml"    {>= "4.04.2" & < "4.10.0"}
+  "ocaml-windows"
   "sexplib0-windows" {>= "v0.13" & < "v0.14"}
   "dune"     {>= "1.5.1"}
-  "dune-windows"
   "dune-configurator-windows"
 ]
 synopsis: "Full standard library replacement for OCaml"

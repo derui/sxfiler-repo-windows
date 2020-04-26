@@ -11,17 +11,13 @@ build: [
 ]
 depends: [
   "ocaml"             {>= "4.04.2"}
+  "ocaml-windows"
   "base-windows"              {>= "v0.13" & < "v0.14"}
-  "ppx_assert"        {>= "v0.13" & < "v0.14"}
   "ppx_assert-windows"        {>= "v0.13" & < "v0.14"}
-  "ppx_compare"       {>= "v0.13" & < "v0.14"}
   "ppx_compare-windows"       {>= "v0.13" & < "v0.14"}
-  "ppx_custom_printf" {>= "v0.13" & < "v0.14"}
   "ppx_custom_printf-windows" {>= "v0.13" & < "v0.14"}
-  "ppx_fields_conv"   {>= "v0.13" & < "v0.14"}
   "ppx_fields_conv-windows"   {>= "v0.13" & < "v0.14"}
   "ppx_here-windows"          {>= "v0.13" & < "v0.14"}
-  "ppx_inline_test"   {>= "v0.13" & < "v0.14"}
   "ppx_inline_test-windows"   {>= "v0.13" & < "v0.14"}
   "ppx_sexp_conv-windows"     {>= "v0.13" & < "v0.14"}
   "ppx_variants_conv-windows" {>= "v0.13" & < "v0.14"}

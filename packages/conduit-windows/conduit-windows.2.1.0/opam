@@ -9,7 +9,8 @@ homepage: "https://github.com/mirage/ocaml-conduit"
 doc: "https://mirage.github.io/ocaml-conduit/"
 bug-reports: "https://github.com/mirage/ocaml-conduit/issues"
 depends: [
-  "ocaml-windows" {>= "4.03.0"}
+  "ocaml" {>= "4.03.0"}
+  "ocaml-windows"
   "dune"
   "ppx_sexp_conv-windows" {>="v0.13.0"}
   "sexplib-windows"

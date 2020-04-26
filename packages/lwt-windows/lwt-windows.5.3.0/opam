@@ -22,8 +22,9 @@ depends: [
   "dune" {>= "1.8.0"}
   "dune-configurator"
   "mmap-windows" {>= "1.1.0"} # mmap is needed as long as Lwt supports OCaml < 4.06.0.
-  "ocaml-windows" {>= "4.02.0"}
-  ("ocaml-windows" {>= "4.08.0"} | "ocaml-syntax-shims")
+  "ocaml" {>= "4.02.0"}
+  "ocaml-windows"
+  ("ocaml" {>= "4.08.0"} | "ocaml-syntax-shims")
   "ocplib-endian-windows"
   "result-windows" # result is needed as long as Lwt supports OCaml 4.02.
   "seq-windows" # seq is needed as long as Lwt supports OCaml < 4.07.0.

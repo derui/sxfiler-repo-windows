@@ -8,7 +8,8 @@ tags: "org:mirage"
 homepage: "https://github.com/mirage/ocaml-conduit"
 bug-reports: "https://github.com/mirage/ocaml-conduit/issues"
 depends: [
-  "ocaml-windows" {>= "4.07.0"}
+  "ocaml" {>= "4.07.0"}
+  "ocaml-windows"
   "dune"
   "base-unix"
   "ppx_sexp_conv-windows" {>="v0.13.0"}

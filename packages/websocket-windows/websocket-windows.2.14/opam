@@ -11,7 +11,8 @@ tags: [
 ]
 build: [ "dune" "build" "-j" jobs "-p" "websocket" "-x" "windows" ]
 depends: [
-  "ocaml-windows" {>= "4.06.0"}
+  "ocaml" {>= "4.06.0"}
+  "ocaml-windows"
   "dune" {>= "1.3.0"}
   "base64-windows" {>= "3.3.0"}
   "conduit-windows" {>= "2.0.2"}

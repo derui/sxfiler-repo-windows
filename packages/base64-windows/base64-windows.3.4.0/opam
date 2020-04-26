@@ -26,8 +26,8 @@ depends: [
 ]
 build: [
   ["dune" "subst"]
-  ["dune" "build" "-p" "base" "-j" jobs "-x" "windows"]
-  ["dune" "runtest" "-p" "base" "-x" "windows"] {with-test}
+  ["dune" "build" "-p" "base64" "-j" jobs "-x" "windows"]
+  ["dune" "runtest" "-p" "base64" "-x" "windows"] {with-test}
 ]
 url {
   src:

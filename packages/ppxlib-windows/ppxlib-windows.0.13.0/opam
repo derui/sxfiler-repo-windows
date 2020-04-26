@@ -8,10 +8,10 @@ doc: "https://ocaml-ppx.github.io/ppxlib/"
 license: "MIT"
 build: [
   ["dune" "subst"] {pinned}
-  ["dune" "build" "-p" "ppxlib-windows" "-j" jobs "-x" "windows"]
+  ["dune" "build" "-p" "ppxlib" "-j" jobs "-x" "windows"]
 ]
 run-test: [
-  ["dune" "runtest" "-p" name "-j" jobs] { ocaml:version >= "4.06" & ocaml:version < "4.08" }
+  ["dune" "runtest" "-p" "ppxlib" "-j" jobs "-x" "windows"] { ocaml:version >= "4.06" & ocaml:version < "4.08" }
 ]
 depends: [
   "ocaml"                   {>= "4.04.1"}

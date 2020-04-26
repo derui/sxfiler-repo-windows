@@ -8,7 +8,7 @@ homepage: "http://gitlab.inria.fr/fpottier/menhir"
 dev-repo: "git+https://gitlab.inria.fr/fpottier/menhir.git"
 bug-reports: "menhir@inria.fr"
 build: [
-  ["dune" "build" "-p" "menhir" "-j" jobs]
+  ["dune" "build" "-p" "menhir" "-j" jobs "-x" "windows"]
 ]
 depends: [
   "ocaml" {>= "4.02.3"}

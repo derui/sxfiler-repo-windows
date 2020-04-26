@@ -36,7 +36,8 @@ The types generated aims to create ocaml idiomatic types;
 - all floating point types are mapped to float.
 - packages are mapped to nested modules
 """
-extra-files: ["patches/remove-google_types.patch" "md5=954c5c1595b8dd08b334de27bc611ff2  "]
+
+extra-files: ["patches/remove-google_types.patch" "md5=954c5c1595b8dd08b334de27bc611ff2"]
 url {
   src: "https://github.com/issuu/ocaml-protoc-plugin/archive/3.0.0.tar.gz"
   checksum: [

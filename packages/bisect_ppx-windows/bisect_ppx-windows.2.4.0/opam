@@ -32,8 +32,8 @@ depends: [
 ]
 
 build: [
-  ["dune" "build" "-p" "ppx_bisect" "-j" jobs "-x" "windows"]
-  ["dune" "runtest" "-p" "ppx_bisect" "-x" "windows"] {with-test}
+  ["dune" "build" "-p" "bisect_ppx" "-j" jobs "-x" "windows"]
+  ["dune" "runtest" "-p" "bisect_ppx" "-x" "windows"] {with-test}
 ]
 
 post-messages: [

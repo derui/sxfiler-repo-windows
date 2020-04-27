@@ -7,7 +7,7 @@ dev-repo: "git+https://github.com/janestreet/ppx_inline_test.git"
 doc: "https://ocaml.janestreet.com/ocaml-core/latest/doc/ppx_inline_test/index.html"
 license: "MIT"
 build: [
-  ["dune" "build" "-p" "ppx_inline_text" "-j" jobs "-x" "windows"]
+  ["dune" "build" "-p" "ppx_inline_test" "-j" jobs "-x" "windows"]
 ]
 depends: [
   "ocaml-windows"  {>= "4.04.2"}

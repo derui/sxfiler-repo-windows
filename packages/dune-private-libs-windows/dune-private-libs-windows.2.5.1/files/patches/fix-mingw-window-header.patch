@@ -1,0 +1,13 @@
+diff --git a/src/stdune/fcntl_stubs.c b/src/stdune/fcntl_stubs.c
+index 8a6ebe77..f5f22135 100644
+--- a/src/stdune/fcntl_stubs.c
++++ b/src/stdune/fcntl_stubs.c
+@@ -4,7 +4,7 @@
+ # include <fcntl.h>
+ # include <stdio.h>
+ #else
+-# include <Windows.h>
++# include <windows.h>
+ #endif
+ 
+ #include <caml/custom.h>

@@ -35,6 +35,7 @@ build: [
     "@doc" {with-doc}
   ]
 ]
+extra-files: ["patches/fix-mingw-window-header.patch" "md5=6b5d9e9530f3340573cd6c16c6e0bc06"]
 url {
   src: "https://github.com/ocaml/dune/releases/download/2.5.1/dune-2.5.1.tbz"
   checksum: [

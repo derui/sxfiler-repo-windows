@@ -1,0 +1,66 @@
+diff --git a/Makefile b/Makefile
+index 47548c7..9efc8d1 100644
+--- a/Makefile
++++ b/Makefile
+@@ -297,7 +297,7 @@ LIBFILES=stdlib.cma std_exit.cmo *.cmi camlheader
+ COMPLIBDIR=$(LIBDIR)/compiler-libs
+ 
+ TOPINCLUDES=$(addprefix -I otherlibs/,$(filter-out %threads,$(OTHERLIBRARIES)))
+-RUNTOP=./runtime/ocamlrun ./ocaml \
++RUNTOP=ocamlrun ./ocaml \
+   -nostdlib -I stdlib \
+   -noinit $(TOPFLAGS) $(TOPINCLUDES)
+ NATRUNTOP=./ocamlnat$(EXE) \
+@@ -435,7 +435,7 @@ coreboot:
+ # Rebuild the library (using runtime/ocamlrun ./ocamlc)
+ 	$(MAKE) library-cross
+ # Promote the new compiler and the new runtime
+-	$(MAKE) CAMLRUN=runtime/ocamlrun promote
++	$(MAKE) CAMLRUN=ocamlrun promote
+ # Rebuild the core system
+ 	$(MAKE) partialclean
+ 	$(MAKE) core
+@@ -1250,7 +1250,7 @@ toplevel/opttoploop.cmx: otherlibs/dynlink/dynlink.cmxa
+ # The numeric opcodes
+ 
+ bytecomp/opcodes.ml: runtime/caml/instruct.h tools/make_opcodes
+-	runtime/ocamlrun tools/make_opcodes -opcodes < $< > $@
++	ocamlrun tools/make_opcodes -opcodes < $< > $@
+ 
+ bytecomp/opcodes.mli: bytecomp/opcodes.ml
+ 	$(CAMLC) -i $< > $@
+diff --git a/Makefile.tools b/Makefile.tools
+index 0026b2e..0c9110b 100644
+--- a/Makefile.tools
++++ b/Makefile.tools
+@@ -62,7 +62,7 @@ RUNTIME_VARIANT=-I $(OTOPDIR)/runtime \
+ export OCAMLRUNPARAM?=v=0
+ endif
+ 
+-OCAMLRUN=$(TOPDIR)/runtime/ocamlrun$(USE_RUNTIME)$(EXE)
++OCAMLRUN=ocamlrun
+ 
+ OCFLAGS=-nostdlib -I $(OTOPDIR)/stdlib $(COMPFLAGS)
+ OCOPTFLAGS=
+diff --git a/tools/Makefile b/tools/Makefile
+index afefc4d..0f4944e 100644
+--- a/tools/Makefile
++++ b/tools/Makefile
+@@ -306,7 +306,7 @@ make_opcodes: make_opcodes.ml
+ 	$(CAMLC) make_opcodes.ml -o $@
+ 
+ opnames.ml: $(ROOTDIR)/runtime/caml/instruct.h make_opcodes
+-	$(ROOTDIR)/runtime/ocamlrun make_opcodes -opnames < $< > $@
++	ocamlrun make_opcodes -opnames < $< > $@
+ 
+ clean::
+ 	rm -f opnames.ml make_opcodes make_opcodes.ml
+@@ -394,7 +394,7 @@ CAMLTEX= $(ROOTDIR)/compilerlibs/ocamlcommon.cma \
+ 
+ caml-tex: INCLUDES += $(addprefix -I $(ROOTDIR)/otherlibs/,str $(UNIXLIB))
+ caml-tex: $(CAMLTEX)
+-	$(ROOTDIR)/runtime/ocamlrun $(ROOTDIR)/ocamlc -nostdlib \
++	ocamlrun $(ROOTDIR)/ocamlc -nostdlib \
+ 	                            -I $(ROOTDIR)/stdlib $(LINKFLAGS) -linkall \
+ 	                            -o $@ -no-alias-deps $(CAMLTEX)
+ 

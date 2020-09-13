@@ -1,0 +1,54 @@
+opam-version: "2.0"
+maintainer: "whitequark@whitequark.org"
+patches: [
+  "patches/ostype-fix.patch"
+  "patches/avoid-cygwin-specifics.patch"
+  "patches/use-host-ocamldoc.patch"
+  "patches/use-host-ocamlrun.patch"
+  "patches/no-ocamltest.patch"
+]
+substs: [
+  "Makefile.cross"
+  "windows.conf"
+]
+build: [
+  ["./build.sh" "%{conf-gcc-windows64:host}%"]
+]
+install: [
+  ["./install.sh" "%{prefix}%"]
+]
+remove: [
+  ["./remove.sh" "%{prefix}%"]
+]
+depends: [
+  "ocaml" {= "4.09.1"}
+  "ocaml-base-compiler" {= "4.09.1"}
+  "ocamlfind" {>= "1.5.4"}
+  "conf-gcc-windows64"
+  "flexdll-windows"
+]
+depopts: [
+  "conf-flambda-windows"
+  "conf-spacetime-windows"
+]
+conflicts: [
+  "ocaml-windows32"
+]
+available: arch = "x86_64"
+synopsis: "OCaml cross-compiler for 64-bit x86 Windows targets"
+extra-files: [
+  ["windows.conf.in" "md5=8457fb3000403fb7145f20e8a0095f89"]
+  ["build.sh" "md5=0d1c2a09c2384174d75beae99db25881"]
+  ["remove.sh" "md5=d2ebe7ce54e4a93a4d71d5fd889f17e3"]
+  ["install.sh" "md5=995050a54b009b4ded377a221f4f6639"]
+  ["Makefile.cross.in" "md5=afd55018b0d3f5787e57aa1572a7fed8"]
+  ["patches/use-host-ocamldoc.patch" "md5=630690f2185fc50c51847cd74b42e2d1"]
+  ["patches/use-host-ocamlrun.patch" "md5=50d6c3f900a77065e970cc2687111d43"]
+  ["patches/ostype-fix.patch" "md5=047c76dd8bf7f17338a3944f3d613675"]
+  ["patches/no-ocamltest.patch" "md5=f1a2006f053f3d195c03f5b8cf4fba31"]
+  ["patches/avoid-cygwin-specifics.patch" "md5=a57e6a27b28010f740fcca2399bb83ca"]
+]
+url {
+  src: "https://github.com/ocaml/ocaml/archive/4.09.1.tar.gz"
+  checksum: "md5=76ac39570fc88b16fda2a94db7cd5cf3"
+}

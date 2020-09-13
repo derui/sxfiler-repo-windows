@@ -50,5 +50,5 @@ extra-files: [
 ]
 url {
   src: "https://github.com/ocaml/ocaml/archive/4.09.1.tar.gz"
-  checksum: "md5=76ac39570fc88b16fda2a94db7cd5cf3"
+  checksum: "md5=88b0d02acce5abdf8f2e98ea266cacc4"
 }

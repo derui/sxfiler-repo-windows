@@ -1,0 +1,27 @@
+opam-version: "2.0"
+version: "0.4.0"
+maintainer: "derutakayu@gmail.com"
+authors: "derui"
+license: "MIT"
+homepage: "https://github.com/derui/migemocaml"
+bug-reports: "https://github.com/derui/migemocaml"
+dev-repo: "git+https://github.com/derui/migemocaml"
+synopsis: "Migemo implementation for OCamhl"
+tags: []
+build: [
+  ["dune" "build" "-p" "migemocaml" "-j" jobs "-x" "windows"]
+  ["dune" "runtest" "-p" "migemocaml" "-x" "windows"] {with-test}
+]
+depends: [
+  "dune-windows" { >= "2.0.0"}
+  "logs-windows" { < "0.8.0" & >= "0.7.0"}
+  "migemocaml-private-windows" { = "0.4.0" }
+]
+available: ["ocaml" >= "4.05.0"]
+description: """
+Pure OCaml implementation of migemo
+"""
+url {
+  src: "https://github.com/derui/migemocaml/archive/0.4.0.tar.gz"
+  checksum: "md5=d41d8cd98f00b204e9800998ecf8427"
+}

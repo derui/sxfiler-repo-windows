@@ -6,6 +6,7 @@ patches: [
   "patches/use-host-ocamldoc.patch"
   "patches/use-host-ocamlrun.patch"
   "patches/no-ocamltest.patch"
+  "patches/snprintf-disable.patch"
 ]
 substs: [
   "Makefile.cross"
@@ -47,6 +48,7 @@ extra-files: [
   ["patches/ostype-fix.patch" "md5=047c76dd8bf7f17338a3944f3d613675"]
   ["patches/no-ocamltest.patch" "md5=f1a2006f053f3d195c03f5b8cf4fba31"]
   ["patches/avoid-cygwin-specifics.patch" "md5=a57e6a27b28010f740fcca2399bb83ca"]
+  ["patches/snprintf-disable.patch" "md5=62926a5e863e78509f0f6d74c784d440"]
 ]
 url {
   src: "https://github.com/ocaml/ocaml/archive/4.09.1.tar.gz"

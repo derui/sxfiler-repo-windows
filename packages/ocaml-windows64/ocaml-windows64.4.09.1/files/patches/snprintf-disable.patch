@@ -1,0 +1,74 @@
+diff --git a/runtime/caml/misc.h b/runtime/caml/misc.h
+index 4466d292e..eb230121b 100644
+--- a/runtime/caml/misc.h
++++ b/runtime/caml/misc.h
+@@ -330,8 +330,8 @@ extern void caml_set_fields (intnat v, uintnat, uintnat);
+ /* snprintf emulation for Win32 */
+ 
+ #if defined(_WIN32) && !defined(_UCRT)
+-extern int caml_snprintf(char * buf, size_t size, const char * format, ...);
+-#define snprintf caml_snprintf
++// extern int caml_snprintf(char * buf, size_t size, const char * format, ...);
++// #define snprintf caml_snprintf
+ #endif
+ 
+ #ifdef CAML_INSTR
+diff --git a/runtime/win32.c b/runtime/win32.c
+index de4757d01..b38dba0dd 100644
+--- a/runtime/win32.c
++++ b/runtime/win32.c
+@@ -677,30 +677,30 @@ wchar_t * caml_executable_name(void)
+ /* snprintf emulation */
+ 
+ #if defined(_WIN32) && !defined(_UCRT)
+-int caml_snprintf(char * buf, size_t size, const char * format, ...)
+-{
+-  int len;
+-  va_list args;
+-
+-  if (size > 0) {
+-    va_start(args, format);
+-    len = _vsnprintf(buf, size, format, args);
+-    va_end(args);
+-    if (len >= 0 && len < size) {
+-      /* [len] characters were stored in [buf],
+-         a null-terminator was appended. */
+-      return len;
+-    }
+-    /* [size] characters were stored in [buf], without null termination.
+-       Put a null terminator, truncating the output. */
+-    buf[size - 1] = 0;
+-  }
+-  /* Compute the actual length of output, excluding null terminator */
+-  va_start(args, format);
+-  len = _vscprintf(format, args);
+-  va_end(args);
+-  return len;
+-}
++/* int caml_snprintf(char * buf, size_t size, const char * format, ...) */
++/* { */
++/*   int len; */
++/*   va_list args; */
++
++/*   if (size > 0) { */
++/*     va_start(args, format); */
++/*     len = _vsnprintf(buf, size, format, args); */
++/*     va_end(args); */
++/*     if (len >= 0 && len < size) { */
++/*       /\* [len] characters were stored in [buf], */
++/*          a null-terminator was appended. *\/ */
++/*       return len; */
++/*     } */
++/*     /\* [size] characters were stored in [buf], without null termination. */
++/*        Put a null terminator, truncating the output. *\/ */
++/*     buf[size - 1] = 0; */
++/*   } */
++/*   /\* Compute the actual length of output, excluding null terminator *\/ */
++/*   va_start(args, format); */
++/*   len = _vscprintf(format, args); */
++/*   va_end(args); */
++/*   return len; */
++/* } */
+ #endif
+ 
+ wchar_t *caml_secure_getenv (wchar_t const *var)

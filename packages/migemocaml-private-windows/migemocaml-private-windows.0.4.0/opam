@@ -14,6 +14,7 @@ build: [
   ["dune" "runtest" "-p" "migemocaml-private" "-x" "windows"] {with-test}
 ]
 depends: [
+  "ocaml-windows"
   "dune-windows" { >= "2.0.0"}
   "logs-windows" { < "0.8.0" & >= "0.7.0"}
   "menhir-windows" {build}

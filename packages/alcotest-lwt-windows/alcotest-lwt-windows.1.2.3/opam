@@ -8,11 +8,11 @@ homepage: "https://github.com/mirage/alcotest"
 doc: "https://mirage.github.io/alcotest"
 bug-reports: "https://github.com/mirage/alcotest/issues"
 depends: [
-  "dune" {>= "2.2"}
-  "ocaml" {>= "4.03.0"}
-  "alcotest" {= version}
-  "lwt"
-  "logs"
+  "dune-windows"
+  "ocaml-windows"
+  "alcotest-windows" {= version}
+  "lwt-windows"
+  "logs-windows"
 ]
 build: [
   ["dune" "subst"] {pinned}
